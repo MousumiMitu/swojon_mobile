@@ -1,57 +1,164 @@
-import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { Tabs } from "expo-router";
+import { View, Text, Platform } from "react-native";
+import { Image } from "react-native";
+import { COLOR } from "@/constants/theme";
+import icons from "@/constants/icons";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
+        headerShown: false,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          left: 0,
+          height: 74,
+          backgroundColor: COLOR.white,
+          borderTopColor: "#f8fafc",
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+          title: "",
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  paddingTop: 16,
+                }}
+              >
+                <Image
+                  source={icons.home}
+                  contentFit="contain"
+                  className="h-[20px] w-[20px]"
+                />
+                <Text
+                  className={`text-xs leading-5  font-bold	${
+                    focused ? "text-activeColor" : "text-secondColor"
+                  }`}
+                >
+                  Home
+                </Text>
+              </View>
+            );
+          },
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="forYou"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "",
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  paddingTop: 16,
+                }}
+              >
+                <Image
+                  source={icons.customize}
+                  contentFit="contain"
+                  className="h-[20px] w-[20px]"
+                />
+                <Text
+                  className={`text-xs leading-5  font-bold	${
+                    focused ? "text-activeColor" : "text-secondColor"
+                  }`}
+                >
+                  For you
+                </Text>
+              </View>
+            );
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="uploadProduct"
+        options={{
+          title: "",
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: Platform.OS === "ios" ? 50 : 60,
+                  height: Platform.OS === "ios" ? 50 : 60,
+                  paddingTop: 16,
+                }}
+              >
+                <Image
+                  source={icons.center}
+                  contentFit="contain"
+                  className="h-[42px] w-[42px]"
+                />
+              </View>
+            );
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="categories"
+        options={{
+          title: "",
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  paddingTop: 16,
+                }}
+              >
+                <Image
+                  source={icons.category}
+                  contentFit="contain"
+                  className="h-[20px] w-[20px]"
+                />
+                <Text
+                  className={`text-xs leading-5  font-bold	${
+                    focused ? "text-activeColor" : "text-secondColor"
+                  }`}
+                >
+                  Categories
+                </Text>
+              </View>
+            );
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="inbox"
+        options={{
+          title: "",
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
+            return (
+              <View
+                style={{
+                  alignItems: "center",
+                  paddingTop: 16,
+                }}
+              >
+                <Image
+                  source={icons.inbox}
+                  contentFit="contain"
+                  className="h-[20px] w-[20px]"
+                />
+                <Text
+                  className={`text-xs leading-5  font-bold	${
+                    focused ? "text-activeColor" : "text-secondColor"
+                  }`}
+                >
+                  For you
+                </Text>
+              </View>
+            );
+          },
         }}
       />
     </Tabs>
