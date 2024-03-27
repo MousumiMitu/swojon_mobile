@@ -66,7 +66,10 @@ const Categories = () => {
               className="absolute inset-0   w-full h-full rounded-sm"
             />
             <View className={`absolute top-2 left-2  `}>
-              <Text className="capitalize font-bold text-sm leading-5 text-whiteColor ">
+              <Text
+                className="capitalize font-bold text-sm leading-5 text-whiteColor "
+                // style={{ fontFamily: "Manrope" }}
+              >
                 {item.title}
               </Text>
             </View>

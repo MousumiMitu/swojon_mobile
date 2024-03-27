@@ -5,3 +5,7 @@ export const COLOR = {
   white: "#FFFFFF",
   lightColor: "#F8F8F8",
 };
+
+export const FONTFAMILY = {
+  manrope: { fontFamily: "Manrope" },
+};

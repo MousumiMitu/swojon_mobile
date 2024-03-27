@@ -18,5 +18,6 @@ module.exports = {
       },
     },
   },
+  fontFamily: { customFont: "Manrope" },
   plugins: [],
 };

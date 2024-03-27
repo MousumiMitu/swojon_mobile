@@ -1,7 +1,6 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
-import FontAwesomeIcon from "@expo/vector-icons/FontAwesome5";
-import { EvilIcons, Feather, Fontisto } from "@expo/vector-icons";
+import { Feather, Fontisto } from "@expo/vector-icons";
 import { COLOR } from "@/constants/theme";
 
 const Header = () => {

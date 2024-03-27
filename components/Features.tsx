@@ -27,7 +27,7 @@ const Features = () => {
         data={items}
         renderItem={({ item }) => (
           <Pressable
-            // className="relative border border-[#F8F8F8] w-[160px] bg-whiteColor rounded-[10px]"
+            // className="relative w-[160px] bg-whiteColor rounded-[10px]"
             style={{
               width: 160,
               backgroundColor: COLOR.white,
@@ -50,10 +50,10 @@ const Features = () => {
               {item.title}
             </Text>
             <View className="flex flex-row gap-1 ">
-              <Text className="text-sm leading-5 font-bold text-primaryColor">
+              <Text className="text-sm leading-5 font-extrabold text-primaryColor">
                 TK
               </Text>
-              <Text className="text-sm leading-5 font-bold text-primaryColor">
+              <Text className="text-sm leading-5 font-extrabold text-primaryColor">
                 {item.price}
               </Text>
             </View>

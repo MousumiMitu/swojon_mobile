@@ -1,11 +1,19 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import React from "react";
+import Header from "@/components/Header";
+import Categories from "@/components/Categories";
+import { StatusBar } from "expo-status-bar";
 
 const categories = () => {
   return (
-    <View className="flex-1 justify-center items-center bg-white">
-      <Text>categories</Text>
-    </View>
+    <SafeAreaView className="flex-1 pt-10 bg-white text-primaryColor">
+      <Header />
+      <ScrollView style={{ marginBottom: 60 }}>
+        <Categories />
+      </ScrollView>
+
+      <StatusBar style="dark" />
+    </SafeAreaView>
   );
 };
 

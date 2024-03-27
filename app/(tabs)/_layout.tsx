@@ -154,7 +154,7 @@ export default function TabLayout() {
                     focused ? "text-activeColor" : "text-secondColor"
                   }`}
                 >
-                  For you
+                  Inbox
                 </Text>
               </View>
             );

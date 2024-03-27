@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import SearchArea from "@/components/SearchArea";
 import Features from "@/components/Features";
 import Categories from "@/components/Categories";
+import CallToAction from "@/components/CallToAction";
 
 export default function TabOneScreen() {
   return (
@@ -14,6 +15,7 @@ export default function TabOneScreen() {
         <SearchArea />
         <Features />
         <Categories />
+        <CallToAction />
       </ScrollView>
 
       <StatusBar style="dark" />
