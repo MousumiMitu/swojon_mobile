@@ -5,7 +5,7 @@ import { COLOR } from "@/constants/theme";
 const SearchArea = () => {
   return (
     <View className="px-[13px] pt-[24px] flex flex-row gap-3">
-      <View className="relative w-[85%]">
+      <View className="relative w-[84%]">
         <TextInput
           placeholder="Search.."
           className="border-none py-[6px] ps-[30px] bg-[#F8F8F8] rounded-[52px] text-sm leading-[19.12px] "
