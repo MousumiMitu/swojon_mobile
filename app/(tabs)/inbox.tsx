@@ -1,11 +1,22 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import InboxLists from "@/components/Inbox/InboxLists";
+import ChatArea from "@/components/Inbox/ChatArea";
 
 const inbox = () => {
+  const [openComponent, setOpenComponent] = useState("list");
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>inbox</Text>
-    </View>
+    <SafeAreaView className="flex-1 px-[13px]  pt-12  pb-5 text-primaryColor bg-white">
+      {openComponent === "list" ? (
+        <InboxLists />
+      ) : (
+        <ChatArea setOpenComponent={setOpenComponent} />
+      )}
+
+      <StatusBar style="dark" />
+    </SafeAreaView>
   );
 };
 

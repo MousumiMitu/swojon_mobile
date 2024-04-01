@@ -6,6 +6,8 @@ import cat from "@/assets/items/cat1.jpg";
 import cat2 from "@/assets/items/cat2.jpg";
 import cat3 from "@/assets/items/cat3.jpg";
 import cat4 from "@/assets/items/cat4.jpg";
+import user1 from "@/assets/users/user1-min.jpg";
+import user2 from "@/assets/users/user2-min.jpg";
 
 export const items = [
   {
@@ -83,4 +85,21 @@ export const categories = [
   //   title: "Land & Property",
   //   image: cat4,
   // },
+];
+
+export const chatLists = [
+  { id: 187, name: "John doe", img: user1 },
+  { id: 124, name: "arisha", img: user2 },
+  { id: 149, name: "xyz", img: user2 },
+  { id: 127, name: "xyz", img: user1 },
+  { id: 12877, name: "xyz", img: user1 },
+  { id: 12822, name: "xyz", img: user2 },
+  { id: 1282, name: "xyz", img: user2 },
+  { id: 1285, name: "arisha", img: user1 },
+  { id: 1287, name: "xyz", img: user1 },
+  { id: 1288, name: "xyz", img: user2 },
+  { id: 1289, name: "xyz", img: user2 },
+  { id: 12866, name: "xyz", img: user1 },
+  { id: 12855, name: "xyz", img: user1 },
+  { id: 1, name: "xyz", img: user1 },
 ];

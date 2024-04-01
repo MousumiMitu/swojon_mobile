@@ -1,15 +1,19 @@
-import { Tabs } from "expo-router";
+import { Tabs, usePathname, useSegments } from "expo-router";
 import { View, Text, Platform } from "react-native";
 import { Image } from "react-native";
 import { COLOR } from "@/constants/theme";
 import icons from "@/constants/icons";
 
 export default function TabLayout() {
+  const segments = useSegments();
+
+  const hide = segments.includes("inbox");
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
+          display: hide ? "none" : "flex",
           position: "absolute",
           bottom: 0,
           right: 0,
@@ -136,6 +140,7 @@ export default function TabLayout() {
         name="inbox"
         options={{
           title: "",
+
           tabBarIcon: ({ focused }: { focused: boolean }) => {
             return (
               <View
