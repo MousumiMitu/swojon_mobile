@@ -14,39 +14,44 @@ import { COLOR } from "@/constants/theme";
 import { chatLists } from "@/constants/products";
 import { ScrollView } from "react-native";
 
-const InboxLists = () => {
+const InboxLists = ({ setOpenComponent }: { setOpenComponent: any }) => {
   const router = useRouter();
   return (
-    <View className="w-full h-full   bg-gray-100 rounded-md p-3">
-      <View className="flex flex-row items-center gap-4 ">
-        <TouchableOpacity onPress={() => router.back()}>
+    <View className="w-full h-full   bg-gray-100 rounded-md  pt-3">
+      <View className="flex flex-row items-center gap-4 px-3">
+        {/* <TouchableOpacity onPress={() => router.back()}>
           <FontAwesome6
             name="arrow-left-long"
             size={18}
             color={COLOR.primary}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <Text className="text-xl capitalize text-primaryColor font-bold">
           chat Lists
         </Text>
       </View>
 
-      <View className="relative w-full mt-3 mb-4">
+      <View className="relative w-full mt-3 mb-6 px-3">
         <TextInput
           placeholder="Search.."
           className="border-none py-[6px] ps-[30px] bg-gray-200 rounded-[52px] text-sm leading-[19.12px] "
         />
-        <View className="absolute left-2 top-0 w-[20px] h-full flex flex-row items-center ">
+        <View className="absolute left-5 top-0 w-[20px] h-full flex flex-row items-center ">
           <EvilIcons name="search" size={18} color={COLOR.primary} />
         </View>
       </View>
 
-      <ScrollView>
+      <ScrollView
+        style={{ marginBottom: 65, paddingLeft: 12, paddingRight: 12 }}
+      >
         <FlatList
           data={chatLists}
           renderItem={({ item }) => (
-            <Pressable className="w-full h-[70px] bg-whiteColor px-3  rounded-[10px] flex flex-row gap-2 justify-between	items-center">
+            <TouchableOpacity
+              className="w-full h-[70px] bg-whiteColor px-3  rounded-[10px] flex flex-row gap-2 justify-between	items-center"
+              onPress={() => setOpenComponent("area")}
+            >
               <View className="">
                 <Image
                   source={item.img}
@@ -81,7 +86,7 @@ const InboxLists = () => {
                   </View>
                 </View>
               </View>
-            </Pressable>
+            </TouchableOpacity>
           )}
           scrollEnabled={false}
           contentContainerStyle={{ gap: 14, flexGrow: 1 }}

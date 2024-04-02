@@ -10,7 +10,7 @@ const inbox = () => {
   return (
     <SafeAreaView className="flex-1 px-[13px]  pt-12  pb-5 text-primaryColor bg-white">
       {openComponent === "list" ? (
-        <InboxLists />
+        <InboxLists setOpenComponent={setOpenComponent} />
       ) : (
         <ChatArea setOpenComponent={setOpenComponent} />
       )}

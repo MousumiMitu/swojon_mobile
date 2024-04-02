@@ -7,13 +7,13 @@ import icons from "@/constants/icons";
 export default function TabLayout() {
   const segments = useSegments();
 
-  const hide = segments.includes("inbox");
+  // const hide = segments.includes("inbox");
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          display: hide ? "none" : "flex",
+          // display: hide ? "none" : "flex",
           position: "absolute",
           bottom: 0,
           right: 0,
