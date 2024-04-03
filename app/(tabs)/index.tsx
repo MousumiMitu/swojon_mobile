@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import { Text, View } from "@/components/Themed";
 import { SafeAreaView, ScrollView, StyleSheet, TextInput } from "react-native";
 import { StatusBar } from "expo-status-bar";
@@ -11,7 +11,7 @@ export default function TabOneScreen() {
   return (
     <SafeAreaView className="flex-1 pt-10 bg-white text-primaryColor">
       <Header />
-      <ScrollView style={{ marginBottom: 60 }}>
+      <ScrollView style={{ marginBottom: 60, zIndex: 0 }}>
         <SearchArea />
         <Features />
         <Categories />

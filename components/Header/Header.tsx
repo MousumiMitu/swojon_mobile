@@ -1,11 +1,13 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import { Feather, Fontisto } from "@expo/vector-icons";
 import { COLOR } from "@/constants/theme";
+import ProfileDropdown from "./ProfileDropdown";
+import { Link } from "expo-router";
 
 const Header = () => {
   return (
-    <View className="px-[13px] h-[68px] flex flex-row items-center border border-[#F8F8F8] bg-white">
+    <View className="px-[13px] h-[68px] flex flex-row items-center border border-[#F8F8F8] bg-white z-10">
       <View className="flex-1 ">
         <Image
           source={require("@/assets/swojon.png")}
@@ -20,13 +22,13 @@ const Header = () => {
         <View className="w-[36px] h-[36px] flex justify-center items-center rounded-full bg-[#F8F8F8]">
           <Feather name="shopping-cart" size={18} color={COLOR.primary} />
         </View>
-        <View className="w-[36px] h-[36px] rounded-full ">
-          <Image
-            source={require("../assets/user.png")}
-            className="w-full h-full rounded-full"
-            resizeMode="cover"
-          />
-        </View>
+        {/* <Link push href="/about">
+          <Pressable>
+            <Text>Home</Text>
+          </Pressable>
+        </Link> */}
+
+        <ProfileDropdown />
       </View>
     </View>
   );

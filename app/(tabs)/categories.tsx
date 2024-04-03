@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import React from "react";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import Categories from "@/components/Categories";
 import { StatusBar } from "expo-status-bar";
 

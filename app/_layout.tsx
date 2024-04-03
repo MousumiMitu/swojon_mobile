@@ -8,7 +8,7 @@ import "./style.css";
 
 import { useColorScheme } from "@/components/useColorScheme";
 import { StatusBar } from "expo-status-bar";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 
 export {
   // Catch any errors thrown by the Layout component.
